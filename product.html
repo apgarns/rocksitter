@@ -95,43 +95,100 @@
     </nav>
     <!-- Navbar End -->
 
-    <!-- Career Opportunities Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
-                <h6 class="text-primary text-uppercase">Career Opportunities</h6>
-                <h1 class="display-5 text-uppercase mb-0">Join Our Team</h1>
-            </div>
+<!-- Career Opportunities Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <!-- ... Rest of the code for the section up to the Job Postings ... -->
 
-            <!-- Job Posting 1 -->
-            <div class="row mb-5">
-                <div class="col-lg-6">
-                    <div class="card shadow-sm h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Pet Care Specialist</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Full-time</h6>
-                            <p class="card-text">We are seeking a dedicated Pet Care Specialist to join our team. If you have a passion for animals and a strong commitment to their well-being, this position might be perfect for you.</p>
-                            <a href="#" class="btn btn-primary">Apply Now</a>
-                        </div>
+        <!-- Job Posting 1 -->
+        <div class="row mb-5">
+            <div class="col-lg-6">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Pet Care Specialist</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Full-time</h6>
+                        <p class="card-text">We are seeking a dedicated Pet Care Specialist to join our team. If you have a passion for animals and a strong commitment to their well-being, this position might be perfect for you.</p>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal1">Apply Now</button>
                     </div>
                 </div>
+            </div>
 
-                <!-- Job Posting 2 -->
-                <div class="col-lg-6">
-                    <div class="card shadow-sm h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Customer Service Representative</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Part-time</h6>
-                            <p class="card-text">Our Customer Service team is looking for a motivated individual who can provide exceptional support to our customers. If you have excellent communication skills and a friendly demeanor, we'd love to hear from you.</p>
-                            <a href="#" class="btn btn-primary">Apply Now</a>
-                        </div>
+            <!-- Job Posting 2 -->
+            <div class="col-lg-6">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Customer Service Representative</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Part-time</h6>
+                        <p class="card-text">Our Customer Service team is looking for a motivated individual who can provide exceptional support to our customers. If you have excellent communication skills and a friendly demeanor, we'd love to hear from you.</p>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal2">Apply Now</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Career Opportunities End -->
+</div>
+<!-- Career Opportunities End -->
     
+<!-- Modal for Job Posting 1 -->
+<div class="modal fade" id="applyModal1" tabindex="-1" aria-labelledby="applyModal1Label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="applyModal1Label">Apply for Pet Care Specialist</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="name1" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name1" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email1" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email1" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone1" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone1" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal for Job Posting 2 -->
+<div class="modal fade" id="applyModal2" tabindex="-1" aria-labelledby="applyModal2Label" aria-hidden="true">
+<div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="applyModal1Label">Apply for Pet Care Specialist</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="name1" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name1" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email1" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email1" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone1" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone1" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!--modal ends -->
 
     <!-- Footer Start -->
     <div class="container-fluid bg-light mt-5 py-5">
