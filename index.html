@@ -10,6 +10,8 @@
     <!-- Favicon -->
     <link href="img/favicon.ico.png" rel="icon" />
 
+  
+
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -35,6 +37,51 @@
   </head>
 
   <body>
+
+
+  <!-- Tracker -->
+
+  <script>
+        // Function to generate a random alphanumeric visitor ID
+        function generateVisitorId() {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let visitorId = '';
+          
+            for (let i = 0; i < 8; i++) {
+                const randomIndex = Math.floor(Math.random() * characters.length);
+                visitorId += characters.charAt(randomIndex);
+            }
+          
+            return visitorId;
+        }
+
+        // Check if the visitor already has a visitor ID cookie
+        const existingVisitorId = getCookie("X-Visitor-ID");
+
+        if (!existingVisitorId) {
+            // Generate a new visitor ID
+            const visitorId = generateVisitorId();
+
+            // Set the visitor ID as a cookie with a 1-year expiration
+            const expirationDate = new Date();
+            expirationDate.setFullYear(expirationDate.getFullYear() + 1);
+            document.cookie = `X-Visitor-ID=${visitorId}; expires=${expirationDate.toUTCString()}; path=/`;
+        }
+
+        // Function to get the value of a cookie by its name
+        function getCookie(cookieName) {
+            const cookies = document.cookie.split(';');
+            for (const cookie of cookies) {
+                const [name, value] = cookie.trim().split('=');
+                if (name === cookieName) {
+                    return value;
+                }
+            }
+            return null;
+        }
+    </script>
+  <!-- script ends -->
+    
     <!-- Topbar Start -->
     <div class="container-fluid border-bottom d-none d-lg-block">
       <div class="row gx-0">
