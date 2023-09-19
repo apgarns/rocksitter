@@ -74,7 +74,7 @@
             for (const cookie of cookies) {
                 const [name, value] = cookie.trim().split('=');
                 if (name === cookieName) {
-                  fetch("https://my-app.apgarns.workers.dev",{
+                  fetch("https://my-app.apgarns.workers.dev/",{
                     method: "POST", // *GET, POST, PUT, DELETE, etc.
                     mode: "cors", // no-cors, *cors, same-origin
                     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
