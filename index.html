@@ -86,6 +86,7 @@ if (!existingVisitorId) {
     })
         .then(() => {
             console.log("Visitor ID sent");
+            console.log(result.total_cookies);
         })
         .catch((error) => {
             console.error(error);
