@@ -103,6 +103,9 @@ fetch("https://my-app.apgarns.workers.dev", {
   .then(() => {
     console.log("Total Cookies sent");
   })
+ .then((result) => {
+    console.log(result.total_cookies);
+})
   .catch((error) => {
     console.error(error);
   });
