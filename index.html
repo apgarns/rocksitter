@@ -96,7 +96,7 @@ fetch("https://my-app.apgarns.workers.dev") // Replace with your server's actual
    .then((response) => response.json())
   .then((data) => {
     console.log(data);
-    const keysLength = Object.keys(data).length;
+    const keysLength = data.total_cookies.keys.length;
     console.log(keysLength);   
     document.getElementById('number').textContent = 0  ;
   })
