@@ -102,8 +102,10 @@ fetch("https://my-app.apgarns.workers.dev") // Replace with your server's actual
   .then((data) => {
     // Access the "total_cookies" value from the JSON response
     const totalCookies = data.totalCookies;
-    console.log(data);
-    document.getElementById('number').textContent = totalCookies;
+    var count = Object.keys(totalCookies).length;
+
+    console.log(count);
+    document.getElementById('number').textContent = count;
   })
   .catch((error) => {
     console.error("Error:", error);
