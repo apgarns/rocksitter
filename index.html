@@ -102,6 +102,8 @@ fetch("https://my-app.apgarns.workers.dev", {
 })
   .then(() => {
     console.log("Total Cookies sent");
+        document.getElementById('number').textContent = "total v";
+
   })
   .catch((error) => {
     console.error(error);
@@ -205,9 +207,7 @@ fetch("https://my-app.apgarns.workers.dev", {
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav py-0">
           <a class="navbar-brand ms-lg-5">
-            <h1 class="">
-              Unique users: 
-            </h1>
+           <p>Visitors: <span id="number">0</span></p>
           </a>
         </div>
         <div class="navbar-nav ms-auto py-0">
