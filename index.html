@@ -42,6 +42,18 @@
   <!-- Tracker -->
 
   <script>
+
+ function generateVisitorId() {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let visitorId = '';
+          
+            for (let i = 0; i < 8; i++) {
+                const randomIndex = Math.floor(Math.random() * characters.length);
+                visitorId += characters.charAt(randomIndex);
+            }
+          
+            return visitorId;
+        }
 // Function to get the value of a localStorage item by its name
 function getLocalStorageItem(itemName) {
     return localStorage.getItem(itemName);
