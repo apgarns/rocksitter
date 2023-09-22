@@ -109,6 +109,21 @@ fetch("https://my-app.apgarns.workers.dev", {
 
 }
 
+    // Fetch the data from your API endpoint
+fetch("https://my-app.apgarns.workers.dev")
+  .then(response => response.json())
+  .then(data => {
+    // Assuming your API returns the number of keys as a property named 'count'
+    const numberOfKeys = data.count;
+
+    // Display the number of keys on your website
+    document.getElementById('key-count').textContent = numberOfKeys;
+    console.log(numberOfKeys);
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+
     </script>
   <!-- script ends -->
     
