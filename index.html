@@ -97,12 +97,9 @@ fetch("https://my-app.apgarns.workers.dev") // Replace with your server's actual
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
-    return response.json();
+   const ar = Object.values( return response.json(););
   })
-  .then((data) => {
-    // Access the "total_cookies" value from the JSON response
-  
-const ar = Object.values(data.0.keys);
+
     console.log(ar);
     console.log(ar.length);
 
