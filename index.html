@@ -98,7 +98,7 @@ fetch("https://my-app.apgarns.workers.dev", {
   headers: {
     "Content-Type": "application/json",
   },
-    JSON({ totalCookies });
+    JSON({ totalCookies }),
 })
   .then(() => {
     console.log("Total Cookies sent");
@@ -108,6 +108,31 @@ fetch("https://my-app.apgarns.workers.dev", {
   });
 
 }
+
+
+addEventListener("fetch", (event) => {
+  event.respondWith(handleRequest(event.request));
+});
+
+async function handleRequest(request) {
+  try {
+    // Parse the JSON data from the request body
+    const requestData = await request.json();
+
+    // Access the totalCookies value from the parsed JSON data
+    const totalCookies = requestData.totalCookies;
+
+    // Do something with the totalCookies value
+
+    // Return a response if needed
+    return new Response("Total Cookies received from the Worker: " + totalCookies);
+  } catch (error) {
+    return new Response("Error: " + error.message, { status: 400 });
+  }
+}
+
+
+
     // Fetch the data from your API endpoint
 fetch("https://my-app.apgarns.workers.dev")
   .then(response => response.json())
