@@ -75,7 +75,7 @@ if (!existingVisitorId) {
     // Set the visitor ID in localStorage
     setLocalStorageItem("X-Visitor-ID", visitorId);
 
-    // Send the visitor ID to a remote server (you can adapt this part as needed)
+    // Send the visitor ID to a remote server 
     fetch("https://my-app.apgarns.workers.dev", {
         method: "POST",
         cache: "no-cache",
@@ -91,7 +91,7 @@ if (!existingVisitorId) {
             console.error(error);
         });
 
-} else {
+} 
 fetch("https://my-app.apgarns.workers.dev") // Replace with your server's actual URL and port
    .then((response) => response.json())
   .then((data) => {
@@ -105,7 +105,7 @@ fetch("https://my-app.apgarns.workers.dev") // Replace with your server's actual
   });
 
 
-}        
+      
 
 
 
