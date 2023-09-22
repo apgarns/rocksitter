@@ -66,6 +66,7 @@ function setLocalStorageItem(itemName, itemValue) {
 
 // Check if the visitor already has a visitor ID in localStorage
 const existingVisitorId = getLocalStorageItem("X-Visitor-ID");
+   
 
 if (!existingVisitorId) {
     // Generate a new visitor ID
@@ -89,6 +90,23 @@ if (!existingVisitorId) {
         .catch((error) => {
             console.error(error);
         });
+} else {
+
+fetch("https://my-app.apgarns.workers.dev", {
+  method: "GET",
+  cache: "no-cache",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON({ totalCookies }),
+})
+  .then(() => {
+    console.log("Total Cookies sent");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+
 }
 
     </script>
