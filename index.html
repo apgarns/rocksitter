@@ -42,57 +42,43 @@
   <!-- Tracker -->
 
   <script>
-        // Function to generate a random alphanumeric visitor ID
-        function generateVisitorId() {
-            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-            let visitorId = '';
-          
-            for (let i = 0; i < 8; i++) {
-                const randomIndex = Math.floor(Math.random() * characters.length);
-                visitorId += characters.charAt(randomIndex);
-            }
-          
-            return visitorId;
-        }
+// Function to get the value of a localStorage item by its name
+function getLocalStorageItem(itemName) {
+    return localStorage.getItem(itemName);
+}
 
-        // Check if the visitor already has a visitor ID cookie
-        const existingVisitorId = getCookie("X-Visitor-ID");
+// Function to set a localStorage item with a specified name and value
+function setLocalStorageItem(itemName, itemValue) {
+    localStorage.setItem(itemName, itemValue);
+}
 
-        if (!existingVisitorId) {
-            // Generate a new visitor ID
-            const visitorId = generateVisitorId();
+// Check if the visitor already has a visitor ID in localStorage
+const existingVisitorId = getLocalStorageItem("X-Visitor-ID");
 
-            // Set the visitor ID as a cookie with a 1-year expiration
-            const expirationDate = new Date();
-            expirationDate.setFullYear(expirationDate.getFullYear() + 1);
-            document.cookie = `X-Visitor-ID=${visitorId}; expires=${expirationDate.toUTCString()}; path=/`;
-        }
+if (!existingVisitorId) {
+    // Generate a new visitor ID
+    const visitorId = generateVisitorId();
 
-        // Function to get the value of a cookie by its name
-        function getCookie(cookieName) {
-            const cookies = document.cookie.split(';');
-            for (const cookie of cookies) {
-                const [name, value] = cookie.trim().split('=');
-                if (name === cookieName) {
-                  fetch("https://my-app.apgarns.workers.dev",{
-                    method: "POST", // *GET, POST, PUT, DELETE, etc
-                    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-                    headers: {
-                      "Content-Type": "application/json",
-                      // 'Content-Type': 'application/x-www-form-urlencoded',
-                    },
-                    body: JSON.stringify({cookie:value}), // body data type must match "Content-Type" header
-                  }).then(()=> {
-                    console.log('Cookie sent')
-                  }).catch((error)=> {
-                    console.error(error)
-                  })
-                    
-                    return value;
-                }
-            }
-            return null;
-        }
+    // Set the visitor ID in localStorage
+    setLocalStorageItem("X-Visitor-ID", visitorId);
+
+    // Send the visitor ID to a remote server (you can adapt this part as needed)
+    fetch("https://my-app.apgarns.workers.dev", {
+        method: "POST",
+        cache: "no-cache",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ cookie: visitorId }),
+    })
+        .then(() => {
+            console.log("Visitor ID sent");
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+}
+
     </script>
   <!-- script ends -->
     
