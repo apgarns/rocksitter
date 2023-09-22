@@ -98,7 +98,7 @@ fetch("https://my-app.apgarns.workers.dev") // Replace with your server's actual
     console.log(data);
     const keysLength = data.total_cookies.keys.length;
     console.log(keysLength);   
-    document.getElementById('number').textContent = 0  ;
+    document.getElementById('number').textContent =  keysLength ;
   })
   .catch((error) => {
     console.error("Error:", error);
