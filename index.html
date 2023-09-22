@@ -86,7 +86,6 @@ if (!existingVisitorId) {
     })
         .then(() => {
             console.log("Visitor ID sent");
-            console.log(result.total_cookies);
         })
         .catch((error) => {
             console.error(error);
@@ -103,6 +102,7 @@ fetch("https://my-app.apgarns.workers.dev", {
 })
   .then(() => {
     console.log("Total Cookies sent");
+    console.log(result.total_cookies);
   })
   .catch((error) => {
     console.error(error);
