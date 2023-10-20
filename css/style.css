@@ -16,6 +16,30 @@
 .bg-primary {
     background-color: #93028D !important;
 }
+.text-primary {
+    color: #93028D !important;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #93028D;
+}
+.border-primary {
+    border-color: #93028D !important;
+}
+.btn-primary {
+    color: #000;
+    background-color: #93028D;
+    border-color: #93028D;
+}
+.bg-light {
+    background-color: #c479c126 !important;
+}
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #000000;
+    transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out;
+}
 .btn {
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
