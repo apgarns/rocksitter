@@ -372,7 +372,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #93028D;
+    background: rgba(122, 183, 48, .8);
     transition: .5s;
     opacity: 0;
 }
