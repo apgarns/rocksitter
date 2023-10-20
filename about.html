@@ -35,6 +35,21 @@
   </head>
 
   <body>
+    <script>
+  // Get the current URL
+  var currentUrl = window.location.href;
+
+  // Get all navigation links
+  var navLinks = document.querySelectorAll('.nav-item.nav-link');
+
+  // Loop through the links and check if their href matches the current URL
+  navLinks.forEach(function(link) {
+    if (link.getAttribute('href') === currentUrl) {
+      link.classList.add('active');
+    }
+  });
+</script>
+
     <!-- Topbar Start -->
     <div class="container-fluid border-bottom d-none d-lg-block">
       <div class="row gx-0">
